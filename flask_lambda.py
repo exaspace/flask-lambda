@@ -101,7 +101,7 @@ class FlaskLambda(Flask):
         body = next(self.wsgi_app(
             make_environ(event),
             response.start_response
-        ))
+        ), "")
 
         return {
             'statusCode': response.status,
